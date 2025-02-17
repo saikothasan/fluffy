@@ -1,17 +1,61 @@
-# Production-specific settings
+# Site settings
+title: Your Professional Jekyll Blog
+email: your-email@example.com
+description: >-
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.yourdomain.com" # Replace with your actual domain
-environment: production
-compress_html:
-  clippings: all
-  comments: ["<!-- ", " -->"]
-  endings: all
-  ignore:
-    envs: [development]
-  blanklines: false
-  profile: false
-  startings: [html, head, body]
+twitter_username: yourtwitterhandle
+github_username:  yourgithubusername
+linkedin_username: yourlinkedinprofile
 
-# SEO-specific settings
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-compress-images
+  - jekyll-algolia
+
+# Pagination
+paginate: 10
+paginate_path: "/page:num/"
+
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-category
+    tag: archive-tag
+  permalinks:
+    category: '/category/:name/'
+    tag: '/tag/:name/'
+
+# Compress images
+compress_images:
+  images_path: "assets/images/**/*.{gif,png,jpg,jpeg,svg}"
+
+# Algolia search
+algolia:
+  application_id: YOUR_ALGOLIA_APP_ID
+  index_name: YOUR_ALGOLIA_INDEX_NAME
+  search_only_api_key: YOUR_ALGOLIA_SEARCH_ONLY_API_KEY
+  files_to_exclude:
+    - index.html
+    - index.md
+    - excluded-file.html
+    - _drafts/*.md
+    - _drafts/*.html
+
+# SEO Tag
 twitter:
   username: yourtwitterhandle
   card: summary_large_image
@@ -24,6 +68,71 @@ social:
     - https://www.linkedin.com/in/yourlinkedinprofile
     - https://github.com/yourgithubusername
 
-# Analytics
+# Google Analytics
 google_analytics: UA-XXXXXXXX-X
+
+# Disqus comments
+disqus:
+  shortname: your-disqus-shortname
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - CNAME
+  - .gitignore
+  - .sass-cache
+
+# Include in processing
+include:
+  - _pages
+
+# Collections
+collections:
+  authors:
+    output: true
+    permalink: /authors/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+      share: true
+      related: true
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Compress HTML (make sure you have the layout set up)
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: [development]
+  blanklines: false
+  profile: false
+  startings: [html, head, body]
 
