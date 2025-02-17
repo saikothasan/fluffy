@@ -72,3 +72,7 @@ sass:
   sass_dir: _sass
   style: compressed
 
+# Custom configuration to address logger issues
+logger:
+  level: info
+
