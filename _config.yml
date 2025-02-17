@@ -1,27 +1,30 @@
 # Site settings
 title: Your Professional Jekyll Blog
-email: your-email@example.com
 description: >-
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Write an awesome description for your new site here.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.yourdomain.com" # Replace with your actual domain
 twitter_username: yourtwitterhandle
 github_username:  yourgithubusername
-linkedin_username: yourlinkedinprofile
 
 # Build settings
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-archives
-  - jekyll-compress-images
-  - jekyll-algolia
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
 
 # Pagination
 paginate: 10
@@ -39,60 +42,6 @@ jekyll-archives:
     category: '/category/:name/'
     tag: '/tag/:name/'
 
-# Compress images
-compress_images:
-  images_path: "assets/images/**/*.{gif,png,jpg,jpeg,svg}"
-
-# Algolia search
-algolia:
-  application_id: YOUR_ALGOLIA_APP_ID
-  index_name: YOUR_ALGOLIA_INDEX_NAME
-  search_only_api_key: YOUR_ALGOLIA_SEARCH_ONLY_API_KEY
-  files_to_exclude:
-    - index.html
-    - index.md
-    - excluded-file.html
-    - _drafts/*.md
-    - _drafts/*.html
-
-# SEO Tag
-twitter:
-  username: yourtwitterhandle
-  card: summary_large_image
-logo: /assets/images/logo.png
-social:
-  name: Your Name
-  links:
-    - https://twitter.com/yourtwitterhandle
-    - https://www.facebook.com/yourfacebookpage
-    - https://www.linkedin.com/in/yourlinkedinprofile
-    - https://github.com/yourgithubusername
-
-# Google Analytics
-google_analytics: UA-XXXXXXXX-X
-
-# Disqus comments
-disqus:
-  shortname: your-disqus-shortname
-
-# Exclude from processing
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - README.md
-  - CNAME
-  - .gitignore
-  - .sass-cache
-
-# Include in processing
-include:
-  - _pages
-
 # Collections
 collections:
   authors:
@@ -107,8 +56,6 @@ defaults:
     values:
       layout: "post"
       comments: true
-      share: true
-      related: true
   - scope:
       path: ""
       type: "pages"
@@ -124,15 +71,4 @@ defaults:
 sass:
   sass_dir: _sass
   style: compressed
-
-# Compress HTML (make sure you have the layout set up)
-compress_html:
-  clippings: all
-  comments: ["<!-- ", " -->"]
-  endings: all
-  ignore:
-    envs: [development]
-  blanklines: false
-  profile: false
-  startings: [html, head, body]
 
