@@ -1,0 +1,186 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --text-color: #333;
+  --background-color: #f4f4f4;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+header {
+  background: var(--secondary-color);
+  color: #fff;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: var(--primary-color) 3px solid;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+header ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+header li {
+  float: left;
+  display: inline;
+  padding: 0 20px 0 20px;
+}
+
+header #branding {
+  float: left;
+}
+
+header #branding h1 {
+  margin: 0;
+}
+
+header nav {
+  float: right;
+  margin-top: 10px;
+}
+
+header .highlight,
+header .current a {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+header a:hover {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Dropdown styles */
+header li {
+  position: relative;
+}
+
+header li ul.dropdown {
+  display: none;
+  position: absolute;
+  background-color: var(--secondary-color);
+  padding: 10px;
+  z-index: 1;
+}
+
+header li:hover ul.dropdown {
+  display: block;
+}
+
+header li ul.dropdown li {
+  display: block;
+  float: none;
+  margin-bottom: 5px;
+}
+
+/* Main content styles */
+main {
+  padding: 30px 0;
+}
+
+article {
+  margin-bottom: 30px;
+}
+
+article h2 {
+  color: var(--primary-color);
+}
+
+time {
+  color: #888;
+  font-style: italic;
+}
+
+/* Footer styles */
+footer {
+  background-color: var(--secondary-color);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-links a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+/* Pagination styles */
+.pagination {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.pagination a,
+.pagination span {
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.pagination span {
+  background-color: #ccc;
+}
+
+/* Search styles */
+.search-container {
+  margin-bottom: 20px;
+}
+
+#search-box {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#search-results {
+  margin-top: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  header #branding,
+  header nav,
+  header nav li {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  header {
+    padding-bottom: 20px;
+  }
+}
+

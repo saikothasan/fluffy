@@ -1,0 +1,21 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+    <main class="site-content">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+    {% include cookie-consent.html %}
+    {% include newsletter-popup.html %}
+    <button id="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </body>
+</html>
+

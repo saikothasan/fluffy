@@ -1,0 +1,43 @@
+---
+layout: default
+title: Home
+---
+
+<div class="home">
+  <h1 class="page-heading">Welcome to {{ site.title }}</h1>
+  
+  <section class="featured-posts">
+    <h2>Featured Posts</h2>
+    <div class="grid">
+      {% for post in site.posts limit:3 %}
+        <div class="card">
+          {% if post.featured_image %}
+            <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" class="card-img">
+          {% endif %}
+          <div class="card-content">
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="recent-posts">
+    <h2>Recent Posts</h2>
+    <ul class="post-list">
+      {% for post in site.posts limit:5 %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+</div>
+

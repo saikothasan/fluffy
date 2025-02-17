@@ -1,0 +1,29 @@
+# Production-specific settings
+url: "https://www.yourdomain.com" # Replace with your actual domain
+environment: production
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: [development]
+  blanklines: false
+  profile: false
+  startings: [html, head, body]
+
+# SEO-specific settings
+twitter:
+  username: yourtwitterhandle
+  card: summary_large_image
+logo: /assets/images/logo.png
+social:
+  name: Your Name
+  links:
+    - https://twitter.com/yourtwitterhandle
+    - https://www.facebook.com/yourfacebookpage
+    - https://www.linkedin.com/in/yourlinkedinprofile
+    - https://github.com/yourgithubusername
+
+# Analytics
+google_analytics: UA-XXXXXXXX-X
+

@@ -1,0 +1,22 @@
+{
+  "build": {
+    "env": {
+      "JEKYLL_ENV": "production"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "headers": {
+        "X-Frame-Options": "DENY",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "continue": true
+    },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
+  ]
+}
+

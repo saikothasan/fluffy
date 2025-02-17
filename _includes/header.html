@@ -1,0 +1,21 @@
+<header class="site-header">
+  <div class="container">
+    <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/about' | relative_url }}">About</a></li>
+        <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
+        <li><a href="{{ '/archive' | relative_url }}">Archive</a></li>
+        <li><a href="{{ '/contact' | relative_url }}">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="search-container">
+      <div id="autocomplete"></div>
+    </div>
+    <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+</header>
+
